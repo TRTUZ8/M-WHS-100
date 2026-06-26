@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow:
+          inset 0 .5em 1.5em rgba(0, 0, 0, .1),
+          inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    <link href="images/pricing.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162z"/>
+      </symbol>
+
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check" viewBox="0 0 16 16">
+        <title>Check</title>
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+    </svg>
+
+    <div class="container py-3">
+      <header>
+        <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+          <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+            <span class="fs-4">M-WHS 100</span>
+          </a>
+        </div>
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal text-body-emphasis">
+            M-WHS: Myocardium Whole Heart Segmentation
+          </h1>
+        </div>
+
+        <div class="justified-text">
+          <br>
+Ground truth pixel-wise annotations were manually delineated on the CT slices by experienced medical image annotation experts 
+following a standardized annotation protocol. The boundaries of the sinus of Valsalva, including the left coronary sinus, right coronary sinus, and noncoronary sinus
+, were manually delineated. All annotations were subsequently reviewed and validated by a perfusionist and a cardiologist, each with more than 20 years of clinical experience.          
+          <br><br>
+To ensure annotation consistency, a standardized annotation protocol was implemented. Delineation commenced at the basal ring and proceeded superiorly to the sinotubular junction, encompassing the sinus of Valsalva, including the left coronary, right coronary, and noncoronary sinuses, as completely as permitted by the available image data. Only the sinus region directly contiguous with the aortic wall was included in the annotations, whereas the ascending aorta beyond the sinotubular junction was excluded. The contours were traced along the luminal boundary defined by the aortic valve anatomy. Anatomically distinct boundaries were preserved between the left coronary, right coronary, and noncoronary sinuses to maintain accurate separation of the three sinus components. The ground truth annotations were encoded as voxel-wise segmentation masks, in which label 1 to the myocardium, label 2 to the aortic valve, and label 3 to the calcification.          <br><br>
+
+
+        </div>
+      </header>
+
+      <main>
+        <div class="row row-cols-1 row-cols-md-1 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">M-WHS-100</h4>
+              </div>
+
+              <div class="card-body">
+                <h3 class="list-unstyled mt-3 mb-4">
+                  For participants who want to download and use the data, please click on the link below
+                </h3>
+
+                <a
+                  class="w-100 btn btn-lg btn-primary"
+                  href="https://www.aicup.tw/%E5%89%AF%E6%9C%AC-%E8%B3%87%E6%96%99%E9%9B%86%E4%B8%8B%E8%BC%89"
+                  role="button"
+                >
+                  Download
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 20%;">ID</th>
+                <th style="width: 20%;">Dimension</th>
+                <th style="width: 20%;">Spacing(mm)</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Public</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+              </tr>
+
+              <tr>
+                <th scope="row" class="text-start">Private</th>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Sample Dataset:</h3>
+          <img style="width: 100%" src="images/fig01.jpg" alt="Sample Dataset">
+
+          <br><br>
+
+          <h3>Display 0001 ~ 0025</h3>
+          <img style="width: 100%" src="images/01_25_43.png" alt="Display 0001 to 0025">
+
+          <br><br>
+
+          <h3>Display 0025 ~ 0050</h3>
+          <img style="width: 100%" src="images/26_50_43.png" alt="Display 0025 to 0050">
+
+          <br><br>
+
+          <h3>Display 0051 ~ 0075</h3>
+          <img style="width: 100%" src="images/51_75_43.png" alt="Display 0051 to 0075">
+
+          <br><br>
+
+          <h3>Display 0076 ~ 0100</h3>
+          <img style="width: 100%" src="images/76_100_43.png" alt="Display 0076 to 0100">
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      fetch('images/data.json')
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.querySelector('tbody');
+          tbody.innerHTML = '';
+
+          data.forEach(row => {
+            const tr = document.createElement('tr');
+
+            tr.innerHTML = `
+              <td>${row.ID}</td>
+              <td>${row["Image Dimensions"]}</td>
+              <td>${row["Image Spacing"]}</td>
+            `;
+
+            tbody.appendChild(tr);
+          });
+        })
+        .catch(error => {
+          console.error('JSON LOADING ERROR:', error);
+        });
+    </script>
+  </body>
+</html>
