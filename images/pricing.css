@@ -9,3 +9,13 @@ body {
 .pricing-header {
   max-width: 700px;
 }
+.justified-text {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.8;
+}
+
+.justified-text p {
+  text-align: justify;
+  margin-bottom: 2rem;
+}
