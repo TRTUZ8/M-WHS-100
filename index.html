@@ -184,21 +184,24 @@
           </a>
         </div>
 
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <div class="text-center">
           <h1 class="display-6 fw-normal text-body-emphasis">
             M-WHS: Myocardium Whole Heart Segmentation
           </h1>
         </div>
 
         <div class="justified-text fs-5 text-body-secondary">
+          <br>
           <p>
-Ground truth pixel-wise annotations were manually delineated on the CT slices by experienced medical image annotation experts 
-following a standardized annotation protocol. The boundaries of the sinus of Valsalva, including the left coronary sinus, right coronary sinus, and noncoronary sinus
-, were manually delineated. All annotations were subsequently reviewed and validated by a perfusionist and a cardiologist, each with more than 20 years of clinical experience.          <br>
-</p>          
-<p>
-To ensure annotation consistency, a standardized annotation protocol was implemented. Delineation commenced at the basal ring and proceeded superiorly to the sinotubular junction, encompassing the sinus of Valsalva, including the left coronary, right coronary, and noncoronary sinuses, as completely as permitted by the available image data. Only the sinus region directly contiguous with the aortic wall was included in the annotations, whereas the ascending aorta beyond the sinotubular junction was excluded. The contours were traced along the luminal boundary defined by the aortic valve anatomy. Anatomically distinct boundaries were preserved between the left coronary, right coronary, and noncoronary sinuses to maintain accurate separation of the three sinus components. The ground truth annotations were encoded as voxel-wise segmentation masks, in which label 1 to the myocardium, label 2 to the aortic valve, and label 3 to the calcification.          <br><br>
-</p>
+            The M-WHS-100 dataset was constructed from clinical CT scans acquired at Cheng Hsin General Hospital. All imaging data were fully anonymized and handled in accordance with the regulations of the hospital's institutional ethics committee. The dataset comprises CT examinations from 100 individual patients and was designed to provide sufficient annotated data for training machine learning-based image segmentation models.
+          </p>
+          <p>
+            Ground-truth pixel-wise annotations were manually delineated by experts according to a standardized annotation protocol. Segmentation was performed from the basal ring to the sinotubular junction, encompassing the sinus of Valsalva, including the left coronary, right coronary, and noncoronary sinuses, to the maximum extent supported by the available image data. Only the sinus region contiguous with the aortic wall was included, whereas the ascending aorta beyond the sinotubular junction was excluded. Contours were delineated along the luminal boundary of the aortic root while preserving the anatomical boundaries between the left coronary, right coronary, and noncoronary sinuses to ensure accurate separation of the three sinus components.
+          </p>
+          <p>
+            The resulting ground-truth annotations were encoded as voxel-wise segmentation masks, with label 1 assigned to the myocardium, label 2 to the aortic valve, and label 3 to calcification.
+
+          </p>
 
         </div>
       </header>
